@@ -27,7 +27,7 @@ public class BanksController {
     InterfaceDAO banksDAO;
         
     /*get banks details by ifsc*/
-	@GetMapping("/bank_branches/{ifsc}")
+	@GetMapping("/banking.herokuapp.com/banks/bankbranches/{ifsc}")
 	@ResponseBody
 	public ResponseEntity<Banks> getByIfsc(@PathVariable String ifsc)
 	{
@@ -42,13 +42,13 @@ public class BanksController {
 
 	}
 	/*get all banks details by branch name and city*/
-	@GetMapping("/bank_branches/{bname}/{city}")
+	@GetMapping("/banking.herokuapp.com/banks/bankbranches/{bankname}/{city}")
 	@ResponseBody
-	public ResponseEntity<List<Banks>> getByName(@PathVariable String bname, @PathVariable String city){
+	public ResponseEntity<List<Banks>> getByBankname(@PathVariable String bankname, @PathVariable String city){
 		List<Banks> bank;
 		List<Banks> banks = new ArrayList<Banks>();
 		try {
-			bank = banksDAO.findBybankNameAndCity(bname, city);
+			bank = banksDAO.findByBanknameAndCity(bankname,city);
 			for (Banks e : bank) {
 				banks.add(e);
 			}

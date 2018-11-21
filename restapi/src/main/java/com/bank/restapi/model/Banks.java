@@ -7,7 +7,7 @@ import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 
 @Entity
-@Table(name="bank_branches", uniqueConstraints = {@UniqueConstraint(columnNames = {"ifsc"})})
+@Table(name="bankbranches", uniqueConstraints = {@UniqueConstraint(columnNames = {"ifsc"})})
 
 public class Banks {
 	
@@ -21,14 +21,14 @@ public class Banks {
 		this.ifsc = ifsc;
 	}
 	
-	@Column(name="bank_id")
-	private int bankId;	
 	
-	public int getBankId() {
-		return bankId;
+	private int bankid;	
+	
+	public int getBankid() {
+		return bankid;
 	}
-	public void setBankId(int bankId) {
-		this.bankId = bankId;
+	public void setBankid(int bankid) {
+		this.bankid = bankid;
 	}
 	
 	private	String branch;	
@@ -78,12 +78,12 @@ public class Banks {
 		this.state = state;
 	}
 	
-	@Column(name="bank_name")
-	private	String bankName;
-	public String getBankName() {
-		return bankName;
+	
+	private	String bankname;
+	public String getBankname() {
+		return bankname;
 	}
-	public void setBank_name(String bankName) {
-		this.bankName = bankName;
+	public void setBankname(String bankname) {
+		this.bankname = bankname;
 	}
 	}

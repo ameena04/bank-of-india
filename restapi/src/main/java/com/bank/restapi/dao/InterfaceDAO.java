@@ -11,5 +11,5 @@ import com.bank.restapi.model.Banks;
 @Transactional
 public interface InterfaceDAO extends CrudRepository<Banks, Long>{
 	public Banks findByIfsc(String ifsc);
-	public List<Banks> findBybankNameAndCity(String name, String city);
+	public List<Banks> findByBanknameAndCity(String name, String city);
 }
